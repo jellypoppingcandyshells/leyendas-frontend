@@ -2,7 +2,10 @@
   "predef": {
     "document": true,
     "window": true,
-    "LeyendasFrontendENV": true
+    "LeyendasFrontendENV": true,
+		"Ember": true,
+		"DS": true,
+		"$": true
   },
   "browser" : true,
   "boss" : true,

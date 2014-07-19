@@ -1,0 +1,8 @@
+<form class="pure-form" {{action 'signIn' on="submit"}}>
+    <fieldset>
+        <legend>Sign In</legend>
+				{{input type="email" value=email placeholder="Your email"}}
+				{{input type="password" value=password placeholder="Your password"}}
+				<button {{bind-attr class=":pure-button pureButtonPrimary buttonSuccess buttonError"}}>{{message}}</button>
+    </fieldset>
+</form>
