@@ -8,6 +8,7 @@ Router.map(function() {
 	this.route('login');
 	this.resource('home', function() {
 		this.route('index');
+		this.resource('checkpoints')
 	});
 });
 

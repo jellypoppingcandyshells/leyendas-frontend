@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     environment: environment,
     baseURL: '/',
-		// locationType: 'auto',
 		locationType: 'hash',
     EmberENV: {
       FEATURES: {
@@ -16,6 +15,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      HOST: 'http://leyendas-backend.herokuapp.com',
+      NAMESPACE: 'api/v1'
     }
   };
 

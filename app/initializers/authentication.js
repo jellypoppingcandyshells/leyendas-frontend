@@ -5,7 +5,7 @@ import BaseAuthorizer from 'simple-auth/authorizers/base';
 var CustomAuthenticator = BaseAuthenticator.extend({
     restore: function(data) {
         return new Ember.RSVP.Promise(function(resolve, reject){
-            if (!Ember.isEmpty(data.token)) {
+            if (!Ember.isEmpty(data.authentication_token)) {
                 resolve(data);
             } else {
                 reject();
@@ -15,9 +15,7 @@ var CustomAuthenticator = BaseAuthenticator.extend({
     authenticate: function(credentials) {
         return new Ember.RSVP.Promise(function(resolve, reject){
             Ember.$.ajax({
-                // url: FourdlifeFrontendENV.APP.HOST + '/' + FourdlifeFrontendENV.APP.NAMESPACE + '/sessions',
-                // url: "http://leyendas-backend.herokuapp.com/api/v1/sessions",
-                url: "http://localhost:3000/api/v1/sessions",
+                url: LeyendasFrontendENV.APP.HOST + '/' + LeyendasFrontendENV.APP.NAMESPACE + '/sessions'
                 type : "POST",
                 dataType : "json",
                 crossDomain: true,
