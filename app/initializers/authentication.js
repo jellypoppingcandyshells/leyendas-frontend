@@ -10,12 +10,12 @@ var CustomAuthenticator = BaseAuthenticator.extend({
             } else {
                 reject();
             }
-        })
+        });
     },
     authenticate: function(credentials) {
         return new Ember.RSVP.Promise(function(resolve, reject){
             Ember.$.ajax({
-                url: LeyendasFrontendENV.APP.HOST + '/' + LeyendasFrontendENV.APP.NAMESPACE + '/sessions'
+                url: LeyendasFrontendENV.APP.HOST + '/' + LeyendasFrontendENV.APP.NAMESPACE + '/sessions',
                 type : "POST",
                 dataType : "json",
                 crossDomain: true,
@@ -29,12 +29,12 @@ var CustomAuthenticator = BaseAuthenticator.extend({
                     reject(error.responseJSON.error.message);
                 }
             });
-        })
+        });
     },
     invalidate: function() {
         return new Ember.RSVP.Promise(function(resolve, reject){
             resolve();
-        })
+        });
     }
 });
 
