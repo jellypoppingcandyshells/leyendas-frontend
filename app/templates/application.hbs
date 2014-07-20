@@ -1,7 +1,11 @@
 <div class="pure-menu pure-menu-open pure-menu-horizontal">
     <ul>
-				<li>{{#link-to 'application'}}Home{{/link-to}}
-				<li>{{#link-to 'sign-in'}}Sign In{{/link-to}}
+				<li>{{#link-to 'home.index'}}Home{{/link-to}}
+				{{#if session.isAuthenticated}}
+        	<li><a {{ action 'logout' }}>Logout</a>
+        {{else}}
+        	<!--<li>{{#link-to 'login'}}Login{{/link-to}}-->
+        {{/if}}
     </ul>
 </div>
 
