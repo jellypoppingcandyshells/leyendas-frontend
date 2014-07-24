@@ -3,9 +3,9 @@
     "document": true,
     "window": true,
     "LeyendasFrontendENV": true,
-		"Ember": true,
-		"DS": true,
-		"$": true
+    "Ember": true,
+    "DS": true,
+    "$": true
   },
   "browser" : true,
   "boss" : true,
