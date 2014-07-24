@@ -1,0 +1,11 @@
+<div class="pure-menu pure-menu-open pure-menu-horizontal">
+    <ul>
+	    {{#if session.isAuthenticated}}
+				<li>{{#link-to 'home.index'}}Home{{/link-to}}</li>
+				<li>{{#link-to 'checkpoints'}}Checkpoints{{/link-to}}</li>
+        <li><a {{action 'logout'}}>Logout</a></li>
+      {{else}}
+      	<li>{{#link-to 'login'}}Login{{/link-to}}</li>
+      {{/if}}
+    </ul>
+</div>

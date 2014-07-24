@@ -10,8 +10,7 @@ window.ENV['simple-auth'] = {
 export default Ember.Route.extend(ApplicationRouteMixin, {
 	actions: {
 		logout: function() {
-			alert("holaaa");
-			// this.send('invalidateSession');
+			this.send('invalidateSession');
 		}
 	}
 });
