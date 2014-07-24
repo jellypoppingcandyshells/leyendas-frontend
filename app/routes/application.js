@@ -7,4 +7,11 @@ window.ENV['simple-auth'] = {
     store: 'simple-auth-session-store:local-sorage'
 };
 
-export default Ember.Route.extend(ApplicationRouteMixin);
+export default Ember.Route.extend(ApplicationRouteMixin, {
+	actions: {
+		logout: function() {
+			alert("holaaa");
+			// this.send('invalidateSession');
+		}
+	}
+});

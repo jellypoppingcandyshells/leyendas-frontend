@@ -1,5 +1,5 @@
 import BaseAuthenticator from 'simple-auth/authenticators/base';
-import BaseAuthorizer from 'simple-auth/authorizers/base';
+// import BaseAuthorizer from 'simple-auth/authorizers/base';
 
 
 var CustomAuthenticator = BaseAuthenticator.extend({
@@ -12,21 +12,28 @@ var CustomAuthenticator = BaseAuthenticator.extend({
             }
         });
     },
-    authenticate: function(credentials) {
+    authenticate: function(params) {
         return new Ember.RSVP.Promise(function(resolve, reject){
             Ember.$.ajax({
                 url: LeyendasFrontendENV.APP.HOST + '/' + LeyendasFrontendENV.APP.NAMESPACE + '/sessions',
                 type : "POST",
                 dataType : "json",
                 crossDomain: true,
-                data: credentials,
+                data: {user: params.user},
+                context: params.login_controller,
                 success: function(data) {
-                    Ember.run(function() {
+                    this.set('message', 'Signed In!');
+                    this.set('buttonSuccess', true);
+                    this.set('buttonError', false);
+                    Ember.run.later(this, function() {
                         resolve({authentication_token: data.authentication_token});
-                    });
+                    }, 250);
                 },
                 error: function(error) {
-                    reject(error.responseJSON.error.message);
+                    this.set('message', error.responseJSON.message);
+                    this.set('buttonSuccess', false);
+                    this.set('buttonError', true);
+                    reject(error.responseJSON.message);
                 }
             });
         });
