@@ -19,6 +19,9 @@ export default Ember.Controller.extend(AuthenticationControllerMixin, {
 				user: this.getProperties('email', 'password'),
 				login_controller: this
 			};
+
+			this.set('message', 'Signin In...')
+
 			this._super(params);
   		},
 	}
