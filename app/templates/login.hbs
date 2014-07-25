@@ -1,8 +1,15 @@
-<form class="pure-form" {{action 'authenticate' on="submit"}}>
-    <fieldset>
-        <legend>Sign In</legend>
-				{{input type="email" value=email placeholder="Your email"}}
-				{{input type="password" value=password placeholder="Your password"}}
-				<button {{bind-attr class=":pure-button pureButtonPrimary buttonSuccess buttonError"}}>{{message}}</button>
-    </fieldset>
+<form class="form-inline" role="form" {{action 'authenticate' on="submit"}}>
+	<div class="form-group">
+	    <div class="input-group">
+	     	<div class="input-group-addon">Email</div>
+			{{input type="email" class="form-control" value=email placeholder="Your email"}}
+	    </div>
+	</div>
+	<div class="form-group">
+	    <div class="input-group">
+	     	<div class="input-group-addon">Password</div>
+			{{input type="password" class="form-control" value=password placeholder="Your password"}}
+	    </div>
+	</div>
+	<button {{bind-attr class=":btn :btn-default btnSuccess btnDanger"}}>{{message}}</button>
 </form>

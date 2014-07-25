@@ -1,6 +1,11 @@
 /* global require, module */
 
+
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+// http://stackoverflow.com/questions/23349959/recommended-way-to-include-bootstrap-library-in-ember-js-ember-cli-app
+var mergeTrees = require('broccoli-merge-trees');
+var pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberApp();
 
@@ -17,6 +22,14 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-app.import('vendor/pure/pure.css');
+app.import('vendor/bootstrap/dist/js/bootstrap.js');
+app.import('vendor/bootstrap/dist/css/bootstrap.css');
 
-module.exports = app.toTree();
+var extraAssets = pickFiles('vendor/bootstrap/dist/fonts',{
+    srcDir: '/', 
+    files: ['**/*'],
+    destDir: '/fonts'
+});
+
+// module.exports = app.toTree();
+module.exports = mergeTrees([app.toTree(), extraAssets]);

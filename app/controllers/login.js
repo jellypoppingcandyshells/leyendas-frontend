@@ -6,8 +6,8 @@ export default Ember.Controller.extend(AuthenticationControllerMixin, {
 	password: 'password',
 
 	message: "Sign In",
-	buttonSuccess: false,
-	buttonError: false,
+	btnSuccess: false,
+	btnDanger: false,
 	
 	clearForm: function() {
 		this.set('email', null);

@@ -1,11 +1,9 @@
-<div class="pure-menu pure-menu-open pure-menu-horizontal">
-    <ul>
-	    {{#if session.isAuthenticated}}
-				<li>{{#link-to 'home.index'}}Home{{/link-to}}</li>
-				<li>{{#link-to 'checkpoints'}}Checkpoints{{/link-to}}</li>
-        <li><a {{action 'logout'}}>Logout</a></li>
-      {{else}}
-      	<li>{{#link-to 'login'}}Login{{/link-to}}</li>
-      {{/if}}
-    </ul>
-</div>
+<ul class="nav nav-pills">
+	{{#if session.isAuthenticated}}
+		<li>{{#link-to 'home.index'}}<span class="glyphicon glyphicon-home"></span> Home{{/link-to}}</li>
+		<li>{{#link-to 'checkpoints'}}Checkpoints{{/link-to}}</li>
+	    <li><a {{action 'logout'}}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+	{{else}}
+ 		<li>{{#link-to 'login'}}Login{{/link-to}}</li>
+	{{/if}}
+</ul>
