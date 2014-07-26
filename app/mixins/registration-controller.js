@@ -25,7 +25,7 @@ export default Ember.Mixin.create({
                     this.set('btnDanger', false);
 
                     Ember.run.later(this, function() {
-						this.transitionTo('login');
+						this.transitionToRoute('login');
                     }, 250);
                 },
                 error: function(error) {

@@ -22,7 +22,7 @@ var CustomAuthenticator = BaseAuthenticator.extend({
                 data: {user: params.user},
                 context: params.login_controller,
                 success: function(data) {
-                    this.set('message', 'Signed In!');
+                    this.set('btnMessage', 'Signed In!');
                     this.set('btnSuccess', true);
                     this.set('btnDanger', false);
                     Ember.run.later(this, function() {
@@ -30,7 +30,7 @@ var CustomAuthenticator = BaseAuthenticator.extend({
                     }, 250);
                 },
                 error: function(error) {
-                    this.set('message', error.responseJSON.message);
+                    this.set('btnMessage', error.responseJSON.message);
                     this.set('btnSuccess', false);
                     this.set('btnDanger', true);
                     reject(error.responseJSON.message);

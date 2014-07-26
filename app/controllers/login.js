@@ -5,7 +5,7 @@ export default Ember.Controller.extend(AuthenticationControllerMixin, {
 	// email: 'apuratepp@gmail.com',
 	// password: 'password',
 
-	message: "Sign In",
+	btnMessage: "Sign In",
 	btnPrimary: true,
 	btnSuccess: false,
 	btnDanger: false,
@@ -21,9 +21,8 @@ export default Ember.Controller.extend(AuthenticationControllerMixin, {
 				login_controller: this
 			};
 
-			this.set('message', 'Signing In...');
-
+			this.set('btnMessage', 'Signing In...');
 			this._super(params);
-  		},
+  		}
 	}
 });
