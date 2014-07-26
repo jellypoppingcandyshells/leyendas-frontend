@@ -12,9 +12,9 @@ export default Ember.Controller.extend(RegistrationControllerMixin, {
 	hasError: false,
 
 	// email: "apuratepp+" + Math.floor((Math.random() * 10) + 1) + "@gmail.com",
-	email: "apuratepp+7@gmail.com",
-	password: "password1",
-	password_confirmation: "password2",
+	// email: "apuratepp+7@gmail.com",
+	// password: "password1",
+	// password_confirmation: "password2",
 
 	actions: {
 		// validate: function() {
