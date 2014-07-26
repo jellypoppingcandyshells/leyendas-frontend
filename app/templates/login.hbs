@@ -1,15 +1,23 @@
 <form class="form-inline" role="form" {{action 'authenticate' on="submit"}}>
+
+	<!-- email -->
 	<div class="form-group">
 	    <div class="input-group">
 	     	<div class="input-group-addon">Email</div>
 			{{input type="email" class="form-control" value=email placeholder="Your email"}}
 	    </div>
 	</div>
+
+	<!-- password -->
 	<div class="form-group">
 	    <div class="input-group">
 	     	<div class="input-group-addon">Password</div>
 			{{input type="password" class="form-control" value=password placeholder="Your password"}}
 	    </div>
 	</div>
-	<button {{bind-attr class=":btn :btn-default btnSuccess btnDanger"}}>{{message}}</button>
+
+	<!-- submit button -->
+	<button {{bind-attr class=":btn btnDefault btnPrimary btnSuccess btnDanger"}}>{{message}}</button>
+	{{#link-to 'sign-up' class="btn btn-default"}}Sign Up{{/link-to}}
 </form>
+

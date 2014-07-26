@@ -1,0 +1,49 @@
+<div class="col-md-6">
+
+{{#if errors}}
+<div class="alert alert-danger" role="alert">
+	<ul>
+	{{#each errors}}
+		<li>{{this}}
+	{{/each}}
+	</ul>
+</div>
+{{/if}}
+
+<form class="form" role="form" {{action 'signUp' on="submit"}}>
+
+	<!-- email -->
+	<div class="form-group">
+	    <div class="input-group">
+	     	<div class="input-group-addon">Email</div>
+			{{input type="email" class="form-control" value=email}}
+	    </div>
+	</div>
+
+	<!-- password -->
+	<div class="form-group" {{bind-attr class="hasError"}}>
+	    <div class="input-group">
+	     	<div class="input-group-addon">Password</div>
+			{{validated-text_field type="password" 
+  				 	validate="validate"
+					class="form-control" 
+					value=password}}
+	    </div>
+	</div>
+
+	<!-- password -->
+	<div class="form-group" {{bind-attr class="hasError"}}>
+	    <div class="input-group">
+	     	<div class="input-group-addon">Password Confirmation</div>
+			{{validated-text_field type="password" 
+							 validate="validate"
+							 class="form-control" 
+							 value=password_confirmation}}
+	    </div>
+	</div>
+
+	<!-- submit button -->
+	<button {{bind-attr class=":btn btnDefault btnPrimary btnSuccess btnDanger btnWarning" disabled="disabled"}}>{{btnMessage}}</button>
+</form>
+
+</div>
