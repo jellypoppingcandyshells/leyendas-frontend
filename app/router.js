@@ -13,7 +13,7 @@ Router.map(function() {
 			this.route('new');
 			this.resource('show', {path: '/:itinerary_id'}, function() {
 				this.route('edit');
-			})
+			});
 		});
 		this.resource('checkpoints');
 	});
