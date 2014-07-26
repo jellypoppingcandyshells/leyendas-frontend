@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-md-4">
+
+		<!-- itineraries index -->
+		<div class="list-group">
+			{{#link-to 'itineraries.new' class="list-group-item"}}Add...{{/link-to}}
+		{{#each}}
+			{{#link-to 'show' this class="list-group-item"}}{{name}} / {{location}}{{/link-to}}
+		{{else}}
+			<!-- no itineraries -->
+		{{/each}}
+		</div>
+
+	</div>
+	<div class="col-md-8">
+
+		<!-- itinerary detail -->
+		{{outlet}}
+
+	</div>
+</div>

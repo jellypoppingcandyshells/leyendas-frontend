@@ -9,6 +9,12 @@ Router.map(function() {
 	this.route('sign-up');
 	this.resource('home', function() {
 		this.route('index');
+		this.resource('itineraries', function() {
+			this.route('new');
+			this.resource('show', {path: '/:itinerary_id'}, function() {
+				this.route('edit');
+			})
+		});
 		this.resource('checkpoints');
 	});
 });
