@@ -25,11 +25,17 @@ var app = new EmberApp();
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
 
-var extraAssets = pickFiles('vendor/bootstrap/dist/fonts',{
+var fonts = pickFiles('vendor/bootstrap/dist/fonts', {
     srcDir: '/', 
     files: ['**/*'],
     destDir: '/fonts'
 });
 
+var bootstrapFiles = pickFiles('vendor/bootstrap/dist/css', {
+	srcDir: '/',
+	files: ['bootstrap.css.map'],
+	destDir: '/assets'
+});
+
 // module.exports = app.toTree();
-module.exports = mergeTrees([app.toTree(), extraAssets]);
+module.exports = mergeTrees([app.toTree(), fonts, bootstrapFiles]);

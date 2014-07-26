@@ -20,6 +20,7 @@
     <script src="assets/leyendas-frontend.js"></script>
     <script>
       window.LeyendasFrontend = require('leyendas-frontend/app')['default'].create(LeyendasFrontendENV.APP);
+      document.title = document.title + " " + window.LeyendasFrontendENV.environment;
     </script>
   </body>
 </html>
