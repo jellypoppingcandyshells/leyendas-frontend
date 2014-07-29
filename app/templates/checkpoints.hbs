@@ -1,6 +1,23 @@
-<h3>Checkpoints</h3>
-<ul>
-{{#each}}
-	<li>{{name}} / {{location}}</li>
-{{/each}}
-</ul>
+<div class="row">
+	<div class="col-md-4">
+
+		<!-- checkpoints index -->
+		<div class="list-group">
+			{{#link-to 'checkpoints.new' class="list-group-item"}}Add...{{/link-to}}
+		{{#each}}
+			{{#link-to 'checkpoints.show' this class="list-group-item"}}{{name}}{{/link-to}}
+		{{else}}
+			<!-- no checkpoints -->
+		{{/each}}
+
+		</div>
+
+
+	</div>
+	<div class="col-md-4">
+
+		<!-- checkpoint detail -->
+		{{outlet}}
+
+	</div>
+</div>

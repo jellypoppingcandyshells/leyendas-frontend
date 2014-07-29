@@ -25,6 +25,7 @@ var CustomAuthenticator = BaseAuthenticator.extend({
                     this.set('btnMessage', 'Signed In!');
                     this.set('btnSuccess', true);
                     this.set('btnDanger', false);
+                    // this.set('disabled', false);
                     Ember.run.later(this, function() {
                         resolve({authentication_token: data.authentication_token});
                     }, 250);
@@ -33,6 +34,7 @@ var CustomAuthenticator = BaseAuthenticator.extend({
                     this.set('btnMessage', error.responseJSON.message);
                     this.set('btnSuccess', false);
                     this.set('btnDanger', true);
+                    this.set('disabled', false);
                     reject(error.responseJSON.message);
                 }
             });

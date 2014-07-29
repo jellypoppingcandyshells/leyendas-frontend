@@ -2,6 +2,7 @@
 	{{#if session.isAuthenticated}}
 		<li>{{#link-to 'home.index'}}<span class="glyphicon glyphicon-home"></span> Home{{/link-to}}</li>
 		<li>{{#link-to 'itineraries.index'}}<span class="glyphicon glyphicon-th-list"></span> Itineraries{{/link-to}}</li>
+		<li>{{#link-to 'checkpoints.index'}}<span class="glyphicon glyphicon-map-marker"></span> Checkpoints{{/link-to}}</li>
 	    <li><a {{action 'logout'}}><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 	{{else}}
  		<li>{{#link-to 'login'}}Login{{/link-to}}</li>

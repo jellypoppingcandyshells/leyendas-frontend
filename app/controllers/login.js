@@ -9,6 +9,7 @@ export default Ember.Controller.extend(AuthenticationControllerMixin, {
 	btnPrimary: true,
 	btnSuccess: false,
 	btnDanger: false,
+	disabled: false,
 	
 	clearForm: function() {
 		this.set('email', null);
@@ -22,6 +23,7 @@ export default Ember.Controller.extend(AuthenticationControllerMixin, {
 			};
 
 			this.set('btnMessage', 'Signing In...');
+			this.set('disabled', true);
 			this._super(params);
   		}
 	}

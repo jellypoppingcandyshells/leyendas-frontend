@@ -9,13 +9,21 @@ Router.map(function() {
 	this.route('sign-up');
 	this.resource('home', function() {
 		this.route('index');
+
+		// itineraries
 		this.resource('itineraries', function() {
 			this.route('new');
-			this.resource('show', {path: '/:itinerary_id'}, function() {
-				this.route('edit');
-			});
+			this.route('show', {path: '/:itinerary_id'});
+			this.route('edit', {path: '/:itinerary_id/edit'});
 		});
-		this.resource('checkpoints');
+
+		// checkpoints
+		this.resource('checkpoints', function() {
+			this.route('new');
+			this.route('show', {path: '/:checkpoint_id'});
+			this.route('edit', {path: '/:checkpoint_id/edit'});
+		});
+
 	});
 });
 

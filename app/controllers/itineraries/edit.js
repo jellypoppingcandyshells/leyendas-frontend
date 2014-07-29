@@ -7,7 +7,7 @@ export default Ember.ObjectController.extend({
 			itinerary.set('name', this.get('name'));
 			
 			itinerary.save().then(function(){
-				controller.transitionToRoute('show.index', itinerary);
+				controller.transitionToRoute('itineraries.show', itinerary);
 			});
 		}
 	}

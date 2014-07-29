@@ -5,7 +5,7 @@
 		<div class="list-group">
 			{{#link-to 'itineraries.new' class="list-group-item"}}Add...{{/link-to}}
 		{{#each}}
-			{{#link-to 'show' this class="list-group-item"}}{{name}} / {{location}}{{/link-to}}
+			{{#link-to 'itineraries.show' this class="list-group-item"}}{{name}} / {{location}}{{/link-to}}
 		{{else}}
 			<!-- no itineraries -->
 		{{/each}}

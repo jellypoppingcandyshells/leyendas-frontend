@@ -26,6 +26,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     /// ENV.APP.LOG_VIEW_LOOKUPS = true;
 
+    // ENV.APP.HOST = 'http://leyendas-backend.herokuapp.com'
     ENV.APP.HOST = 'http://localhost:3000'
   }
 

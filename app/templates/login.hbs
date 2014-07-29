@@ -1,10 +1,11 @@
-<form class="form-inline" role="form" {{action 'authenticate' on="submit"}}>
+<form class="form-inline" disabled="disabled" role="form" {{action 'authenticate' on="submit"}}>
+	<fieldset {{bind-attr disabled="disabled"}}>
 
 	<!-- email -->
 	<div class="form-group">
 	    <div class="input-group">
 	     	<div class="input-group-addon">Email</div>
-			{{input type="email" class="form-control" value=email placeholder="Your email"}}
+			{{input type="email" class="form-control" value=email}}
 	    </div>
 	</div>
 
@@ -12,12 +13,16 @@
 	<div class="form-group">
 	    <div class="input-group">
 	     	<div class="input-group-addon">Password</div>
-			{{input type="password" class="form-control" value=password placeholder="Your password"}}
+			{{input type="password" class="form-control" value=password}}
 	    </div>
 	</div>
 
 	<!-- submit button -->
 	<button {{bind-attr class=":btn btnDefault btnPrimary btnSuccess btnDanger"}}>{{btnMessage}}</button>
+
+	<!-- sign up link button -->
 	{{#link-to 'sign-up' class="btn btn-default"}}Sign Up{{/link-to}}
+
+	</fieldset>
 </form>
 

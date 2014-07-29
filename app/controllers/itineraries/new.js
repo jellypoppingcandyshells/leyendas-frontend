@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
 			var controller = this;
 			var itinerary = this.store.createRecord('itinerary', this.getProperties('name'))
 			itinerary.save().then(function(itinerary) {
-				controller.transitionToRoute('show', itinerary);
+				controller.transitionToRoute('itineraries.show', itinerary);
 			});
 		}
 	}
