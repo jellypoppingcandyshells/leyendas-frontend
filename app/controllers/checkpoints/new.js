@@ -5,6 +5,9 @@ export default Ember.Controller.extend({
 			var checkpoint = this.store.createRecord('checkpoint', this.getProperties('name'))
 			checkpoint.save().then(function(checkpoint) {
 				controller.transitionToRoute('show', checkpoint);
+			}, function(error){
+				// debugger
+				controller.set('errors', error.responseJSON.messages);
 			});
 		}
 	}
