@@ -31,9 +31,11 @@ var CustomAuthenticator = BaseAuthenticator.extend({
                     }, 250);
                 },
                 error: function(error) {
-                    this.set('btnMessage', error.responseJSON.message);
+                    this.set('errors', [error.responseJSON.message])
+                    this.set('btnMessage', 'Sign In, again');
+                    this.set('btnPrimary', true);
                     this.set('btnSuccess', false);
-                    this.set('btnDanger', true);
+                    this.set('btnDanger', false);
                     this.set('disabled', false);
                     reject(error.responseJSON.message);
                 }

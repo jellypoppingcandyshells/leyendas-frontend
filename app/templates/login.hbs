@@ -1,4 +1,7 @@
+{{error-messages errors=errors}}
+
 <form class="form-inline" disabled="disabled" role="form" {{action 'authenticate' on="submit"}}>
+
 	<fieldset {{bind-attr disabled="disabled"}}>
 
 	<!-- email -->
@@ -20,9 +23,5 @@
 	<!-- submit button -->
 	<button {{bind-attr class=":btn btnDefault btnPrimary btnSuccess btnDanger"}}>{{btnMessage}}</button>
 
-	<!-- sign up link button -->
-	{{#link-to 'sign-up' class="btn btn-default"}}Sign Up{{/link-to}}
-
 	</fieldset>
 </form>
-

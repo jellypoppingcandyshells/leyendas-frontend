@@ -2,14 +2,15 @@ import AuthenticationControllerMixin from 'simple-auth/mixins/authentication-con
 
 export default Ember.Controller.extend(AuthenticationControllerMixin, {
   authenticator: 'authenticator:custom',
-	// email: 'apuratepp@gmail.com',
-	// password: 'password',
+	email: null,
+	password: null,
 
 	btnMessage: "Sign In",
 	btnPrimary: true,
 	btnSuccess: false,
 	btnDanger: false,
 	disabled: false,
+	errors: null,
 	
 	clearForm: function() {
 		this.set('email', null);

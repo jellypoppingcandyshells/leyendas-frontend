@@ -1,0 +1,15 @@
+{{#if errors}}
+	<div class="alert alert-danger error-messages" role="alert">
+		<ul>
+		{{#each errors}}
+			<li><span class="glyphicon glyphicon glyphicon-remove-circle"></span> {{this}}</li>
+		{{/each}}
+		</ul>
+	</div>
+{{else}}
+	{{#if infoMessage}}
+		<div class="alert alert-info" role="alert">
+			{{{infoMessage}}}
+		</div>
+	{{/if}}
+{{/if}}

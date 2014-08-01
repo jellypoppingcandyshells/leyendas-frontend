@@ -1,14 +1,6 @@
 <div class="col-md-6">
 
-{{#if errors}}
-<div class="alert alert-danger" role="alert">
-	<ul>
-	{{#each errors}}
-		<li>{{this}}
-	{{/each}}
-	</ul>
-</div>
-{{/if}}
+{{error-messages errors=errors}}
 
 <form class="form" role="form" {{action 'signUp' on="submit"}}>
 
